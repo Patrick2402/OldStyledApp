@@ -19,7 +19,7 @@ http://127.0.0.1:8000
 
 To set mongo connection you have to change to your credentials USERNAME and PASSWORD
 ```js
-    .connect('mongodb+srv://admin:IrrAfMFIiemBKg2I@shop.1ti2u.mongodb.net/')
+    .connect('mongodb+srv://USER:PASS@URL.mongodb.net/')
 ```
 
 ## Tip
