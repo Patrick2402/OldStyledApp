@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/nav.css">
+</head>
+<body>
+  <div id="login-main">
+    <div id="login-nav">
+      <% if (isAuthed) { %>
+        <%- include('partials/nav-common') %>
+      <% } else { %> 
+        <%- include('partials/nav') %>
+      <% } %>
+    </div>
+    <div id="login-form">
+      <% if (posts.length > 0) { %>
+        <ul>
+          <% posts.forEach(post => { %>
+              <h1><%= post.title %></h3>
+              <p><%= post.content %></p>
+              
+              <small>Dodano: <%= post.date.toDateString()%> by <%= post.username %></small>
+          <% }) %>
+        </ul>
+      <% } else { %>
+        <p>Brak postów do wyświetlenia.</p>
+      <% } %>
+    </div>
+</div>
+</body>
+</html>

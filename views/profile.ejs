@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/nav.css">
+</head>
+<body>
+    <div id="login-main">
+        <div id="login-nav">
+          <% if (isAuthed) { %>
+            <%- include('partials/nav') %>
+          <% } %>
+        </div>
+        <div id="profile-form">
+            <div class="profile-top">
+                <h1>My Informations</h1></br>
+                <p class="profile-username">Username: <%= username %></p>
+                <form action="/change-password" method="get">
+                    <button type="submit">Change Password</button>
+                </form>
+            </br><h1>My Posts</h1>
+                <% if (myPosts.length > 0) { %>
+                    <ul>
+                    <% myPosts.forEach(myPost => { %>
+                        <li><%= myPost.title %></li>
+                    <% }) %>
+                    </ul>
+                <% } else { %>
+                    <p>Brak postów do wyświetlenia.</p>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

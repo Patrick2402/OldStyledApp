@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/nav.css">
+</head>
+<body>
+    <div id="login-main">
+        <div id="login-nav"><%- include('partials/nav-common') %></div>
+        <div id="login-form">
+            <form class="login-form" action="/register" method="POST">
+                <label for="username">Username</label>
+                <input type="text" name="username">
+                <label for="password">Password</label>
+                <input type="password" name="password">
+                <label for="re_password">Confirm password</label>
+                <input type="password" name="re_password">
+                <button type="submit">Register</button>
+                <% if (error) { %>
+                    <div class="error-banner">Passwords do not match</div>
+                <% } %>
+            </form>
+        </div>
+    
+</body>
+</html>
