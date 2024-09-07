@@ -24,7 +24,7 @@
                 <% if (myPosts.length > 0) { %>
                     <ul>
                     <% myPosts.forEach(myPost => { %>
-                        <li><%= myPost.title %></li>
+                        <li><a href="/poster?post=<%= myPost._id %>"><%= myPost.title %></a></li>
                     <% }) %>
                     </ul>
                 <% } else { %>

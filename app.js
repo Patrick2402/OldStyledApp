@@ -11,6 +11,7 @@ const posts = require('./routes/posts');
 const routerLogout = require('./routes/logout');
 const profile = require('./routes/profile');
 const resetPassword = require('./routes/changePassword');
+const pass = require('./mongopasswords');
 
 
 // const ejs = require('ejs')
@@ -41,8 +42,8 @@ app.use(routerLogout);
 app.use(mainSite);
 
 mongoose
-    .connect('mongodb+srv://USER:PASS@XXXX.mongodb.net/?retryWrites=true&w=majority&appName=shop')
-    .then((result)=> {
+.connect(pass)    
+.then((result)=> {
     app.listen(8000);
 })
     .catch(err => {

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %> </title>
+    <link rel="stylesheet" href="/css/nav.css">
+
+</head>
+<body>
+    <div id="post-main">
+        <div id="post-nav">
+            <%- include('partials/nav') %>
+        </div>
+        <div id="post-content">
+            <button  id="likeButton-<%= post._id %>" onclick="likePost('<%= post._id %>')">
+                 Like it! (<%= post.likes.length %>)
+            </button>
+            <h1><%= title %></h1>
+            <small><i>Created by <%= post.username %></i></small>
+            </br>
+            <p><%= post.content %></p>
+            
+
+        </div>
+    </div>
+    <script>
+        async function likePost(postId) {
+          try {
+            const response = await fetch(`/post/${postId}/like`, {
+              method: 'PUT',
+              headers: {
+                'Content-Type': 'application/json'
+              }
+            });
+    
+            const data = await response.json();
+            document.getElementById(`likeButton-${postId}`).innerText = `Like it! (${data.likesCount})`;
+          } catch (err) {
+            console.error('Error:', err);
+          }
+        }
+      </script>
+</body>
+</html>

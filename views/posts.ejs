@@ -17,16 +17,49 @@
       <% if (posts.length > 0) { %>
         <ul>
           <% posts.forEach(post => { %>
-              <h1><%= post.title %></h3>
-              <p><%= post.content %></p>
+            <h3><a href="/poster?post=<%= post._id %>"><%= post.title %></a></h3>
+            <p><%= post.content %></p>
               
-              <small>Dodano: <%= post.date.toDateString()%> by <%= post.username %></small>
+              <small>Dodano: <%= post.date.toDateString() %> by <%= post.username %></small>
+          </br>
+          <button  id="likeButton-<%= post._id %>" onclick="likePost('<%= post._id %>')">
+           Like it! (<%= post.likes.length %>)
+          </button>
+              <hr/>
           <% }) %>
         </ul>
+
       <% } else { %>
-        <p>Brak postów do wyświetlenia.</p>
+        <p>Nothing there.</p>
       <% } %>
     </div>
-</div>
+    <div class="pagination">
+      <% if (pagination.hasPreviousPage) { %>
+        <a href="?page=<%= pagination.currentPage - 1 %>">Previous</a>
+      <% } %>
+      <% if (pagination.hasNextPage) { %>
+        <a href="?page=<%= pagination.currentPage + 1 %>">Next</a>
+      <% } %>
+    </div>
+  </div>
+  
+
+  <script>
+    async function likePost(postId) {
+      try {
+        const response = await fetch(`/post/${postId}/like`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+
+        const data = await response.json();
+        document.getElementById(`likeButton-${postId}`).innerText = `Like it! (${data.likesCount})`;
+      } catch (err) {
+        console.error('Error:', err);
+      }
+    }
+  </script>
 </body>
 </html>

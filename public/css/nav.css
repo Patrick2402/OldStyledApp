@@ -19,7 +19,7 @@ html, body {
 
 a {
   text-decoration: none;
-  color: #fff090;
+  color: #dd0c0c;
 }
 
 li {
@@ -55,21 +55,26 @@ li {
     display: grid;
     height: 100vh;
     grid-template-columns: 20% 80%;
-    width: 100vw; /* Upewnij się, że kontener zajmuje całą szerokość widoku */
+    width: 100vw; 
 }
 
 #login-nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 80vh;
 }
 
 #login-form {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
+#login-form ul {
+  width: 90%;
+}
 form {
     display: flex;
     flex-direction: column;
@@ -134,10 +139,9 @@ form {
 
 #login-form  {
     padding: 10px;
-
 }
 
-#login-form h1 {
+#login-form h3 {
     color: #f30410;
     padding: 10px;
 }
@@ -204,5 +208,69 @@ form {
 }
 
 
+button[id^="likeButton-"]{
+  background-color: unset; 
+
+  border: 1px solid black; 
+  color: white; 
+  padding: 10px 20px; 
+  text-align: center; 
+  text-decoration: none; 
+  display: inline-block; 
+  font-size: 16px; 
+  margin: 4px 2px;
+  cursor: pointer; 
+  border-radius: 5px; 
+  transition: background-color 0.3s, transform 0.3s; 
+}
 
 
+button[id^="likeButton-"]:hover {
+
+  border: green 1px solid;
+}
+
+
+button[id^="likeButton-"]:active {
+  transform: scale(0.98); 
+}
+
+.pagination {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+
+
+#post-main {
+    color: white;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 20% 80%;
+    width: 100vw; 
+    justify-content: center;
+}
+
+#post-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+#post-content {
+
+    display: flex;
+    justify-content:center;
+    align-items: end;
+    width: 80%;
+    height: 80%;
+    flex-direction: column;
+    
+}
+#post-content small {
+  color: #dd0c0c;
+}
