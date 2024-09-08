@@ -28,6 +28,9 @@ You can just clict 'connect' in mongo atlas next to your cluster and copy code.
 # Running on docker
 To run app on docker you need to have cluster in mongoDB Atlas or localy. 
 Step by step:
+```url
+https://hub.docker.com/r/patryk2402/postapp
+```
 ```bash
 1. docker pull patryk2402/postapp
 ```
