@@ -1,5 +1,5 @@
 const express = require('express');
-const bcrypt = require('bcrypt');
+const argon = require('argon2');
 const mongoose = require('mongoose');
 
 const router = express.Router();
@@ -24,8 +24,7 @@ router.post('/register', async (req, res, next) => {
     }
 
     try {
-        const hashedPassword = await bcrypt.hash(password, 10);
-
+        const hashedPassword = await argon.hash(password);
         const newUser = new User({
             username: username,
             password: hashedPassword

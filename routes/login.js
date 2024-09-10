@@ -1,7 +1,8 @@
 
 const express = require('express');
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
+const argon = require('argon2');
+
 
 const register = require('./register');
 
@@ -26,7 +27,7 @@ router.post('/login', async (req, res, next) => {
         if (!user) {
             return res.render('login', { title: 'Login', error: true });
         }
-        const match = await bcrypt.compare(password, user.password);
+        const match = await argon.verify(user.password, password)
 
         if (!match) {
             return res.render('login', { title: 'Login', error: true });
@@ -35,7 +36,6 @@ router.post('/login', async (req, res, next) => {
         req.session.user = user; 
         isAuthed = true;
         res.redirect('/');
-        console.log('User Logged');
     } catch (err) {
         console.error('Error logging in:', err);
         res.status(500).send('Error logging in');
