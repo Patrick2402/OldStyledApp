@@ -12,6 +12,7 @@ const routerLogout = require('./routes/logout');
 const profile = require('./routes/profile');
 const resetPassword = require('./routes/changePassword');
 const pass = require('./mongopasswords');
+const securityHeaders = require('./middleware/securityHeaders');
 
 
 // const ejs = require('ejs')
@@ -32,6 +33,7 @@ app.use(express.urlencoded({ extended: true }));
 // app.use('/posts', (req, res, next) => {
 //     res.render('posts', {title: 'Posts', message: 'Here there are some products', posts: addPost.posts });
 // })
+app.use(securityHeaders);
 app.use(resetPassword.router);
 app.use(profile.router);
 app.use(posts.router);

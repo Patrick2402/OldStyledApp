@@ -2,35 +2,37 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const argon = require('argon2');
-
-
+const validator = require('validator');
 const register = require('./register');
 
 let isAuthed = false;
-
-// const users = []
 
 router = express.Router();
 
 
 
 router.get('/login', (req, res, next) => {
-  res.render('../views/login',{title: 'Login'});
+    console.log()
+  res.render('../views/login',{title: 'Login', error: false, message: ''});
 });
 
 router.post('/login', async (req, res, next) => {
     const { username, password } = req.body;
 
+    if (!validator.isAlphanumeric(username)) {
+        return res.render('login', { title: 'Login', error: true, message: 'Invalid username format, Only letters and numbers allowed!' });
+    }
+
     try {
         const user = await register.user.findOne({ username: username });
 
         if (!user) {
-            return res.render('login', { title: 'Login', error: true });
+            return res.render('login', { title: 'Login', error: true, message: "Invalid username" });
         }
         const match = await argon.verify(user.password, password)
 
         if (!match) {
-            return res.render('login', { title: 'Login', error: true });
+            return res.render('login', { title: 'Login', error: true, message: 'Invalid password' });
         }
 
         req.session.user = user; 

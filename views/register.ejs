@@ -19,7 +19,7 @@
                 <input type="password" name="re_password">
                 <button type="submit">Register</button>
                 <% if (error) { %>
-                    <div class="error-banner">Passwords do not match</div>
+                    <div class="error-banner"><%= message %></div>
                 <% } %>
             </form>
         </div>

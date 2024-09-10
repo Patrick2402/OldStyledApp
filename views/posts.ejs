@@ -46,20 +46,20 @@
 
   <script>
     async function likePost(postId) {
-      try {
-        const response = await fetch(`/post/${postId}/like`, {
-          method: 'PUT',
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        });
+    try {
+      const response = await fetch(`/post/${postId}/like`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
 
-        const data = await response.json();
-        document.getElementById(`likeButton-${postId}`).innerText = `Like it! (${data.likesCount})`;
-      } catch (err) {
-        console.error('Error:', err);
-      }
+      const data = await response.json();
+      document.getElementById(`likeButton-${postId}`).innerText = `Like it! (${data.likesCount})`;
+    } catch (err) {
+      console.error('Error:', err);
     }
+  }
   </script>
 </body>
 </html>

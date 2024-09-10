@@ -24,7 +24,8 @@
 
         </div>
     </div>
-    <script>
+
+      <script>
         async function likePost(postId) {
           try {
             const response = await fetch(`/post/${postId}/like`, {
@@ -33,7 +34,7 @@
                 'Content-Type': 'application/json'
               }
             });
-    
+      
             const data = await response.json();
             document.getElementById(`likeButton-${postId}`).innerText = `Like it! (${data.likesCount})`;
           } catch (err) {
@@ -41,5 +42,7 @@
           }
         }
       </script>
+      
 </body>
+
 </html>
