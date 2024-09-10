@@ -16,7 +16,11 @@
             <label for="password">Password</label>
             <input type="password" name="password" required>
             <button type="submit">Sign In</button>
+            <% if (error) { %>
+                <div class="error-banner"><%= message %></div>
+            <% } %>
         </form>
+        
     </div>
 </div>
 </body>
