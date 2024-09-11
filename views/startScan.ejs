@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/nav.css">
+</head>
+<body>
+    <div id="login-main">
+        <div id="login-nav">
+            <ol>
+                <li><a class="arrow" href="/"><i class="fas fa-arrow-alt-right"></i>Home</a></li>
+                <li><a class="arrow" href="/posts"><i class="fas fa-arrow-alt-right"></i>Posts</a></li>
+                <li><a class="arrow" href="/addPost"><i class="fas fa-arrow-alt-right"></i>Add Posts</a></li>
+                <li><a class="arrow" href="/profile"><i class="fas fa-arrow-alt-right"></i>My Profile</a></li>
+                <li><a class="arrow" href="/logout"><i class="fas fa-arrow-alt-right"></i>Logout</a></li>
+              </ol>
+        </div>
+        <div id="login-form">
+            <form class="login-form" action="/start-scan" method="POST">
+                <label for="imageName">Image Name:</label>
+                <input type="text" id="imageName" name="imageName" required>
+                <br>
+                <button type="submit">Scan</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

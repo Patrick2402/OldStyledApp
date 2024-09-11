@@ -1,0 +1,101 @@
+"vulnerability": {
+    "id": "CVE-2023-1972",
+    "dataSource": "https://security-tracker.debian.org/tracker/CVE-2023-1972",
+    "namespace": "debian:distro:debian:12",
+    "severity": "Negligible",
+    "urls": [
+     "https://security-tracker.debian.org/tracker/CVE-2023-1972"
+    ],
+    "description": "A potential heap based buffer overflow was found in _bfd_elf_slurp_version_tables() in bfd/elf.c. This may lead to loss of availability.",
+    "cvss": [],
+    "fix": {
+     "versions": [],
+     "state": "not-fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2023-1972",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2023-1972",
+     "namespace": "nvd:cpe",
+     "severity": "Medium",
+     "urls": [
+      "https://bugzilla.redhat.com/show_bug.cgi?id=2185646",
+      "https://security.gentoo.org/glsa/202309-15",
+      "https://sourceware.org/bugzilla/show_bug.cgi?id=30285"
+     ],
+     "description": "A potential heap based buffer overflow was found in _bfd_elf_slurp_version_tables() in bfd/elf.c. This may lead to loss of availability.",
+     "cvss": [
+      {
+       "source": "nvd@nist.gov",
+       "type": "Primary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+       "metrics": {
+        "baseScore": 6.5,
+        "exploitabilityScore": 2.8,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-indirect-match",
+     "matcher": "dpkg-matcher",
+     "searchedBy": {
+      "distro": {
+       "type": "debian",
+       "version": "12"
+      },
+      "namespace": "debian:distro:debian:12",
+      "package": {
+       "name": "binutils",
+       "version": "2.40-2"
+      }
+     },
+     "found": {
+      "versionConstraint": "none (deb)",
+      "vulnerabilityID": "CVE-2023-1972"
+     }
+    }
+   ],
+   "artifact": {
+    "id": "aca197918f5dd44b",
+    "name": "libbinutils",
+    "version": "2.40-2",
+    "type": "deb",
+    "locations": [
+     {
+      "path": "/usr/share/doc/binutils-common/copyright",
+      "layerID": "sha256:cc322244ab6ff161ac13313e942424a6a8f25faab31009fbca99048530698d64"
+     },
+     {
+      "path": "/var/lib/dpkg/info/libbinutils:arm64.md5sums",
+      "layerID": "sha256:cc322244ab6ff161ac13313e942424a6a8f25faab31009fbca99048530698d64"
+     },
+     {
+      "path": "/var/lib/dpkg/status",
+      "layerID": "sha256:cc322244ab6ff161ac13313e942424a6a8f25faab31009fbca99048530698d64"
+     }
+    ],
+    "language": "",
+    "licenses": [
+     "GFDL",
+     "GPL",
+     "LGPL"
+    ],
+    "cpes": [
+     "cpe:2.3:a:libbinutils:libbinutils:2.40-2:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:deb/debian/libbinutils@2.40-2?arch=arm64&upstream=binutils&distro=debian-12",
+    "upstreams": [
+     {
+      "name": "binutils"
+     }
+    ]
+   }
+  

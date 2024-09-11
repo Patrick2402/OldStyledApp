@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/nav.css">
+</head>
+<body>
+  <div id="login-main">
+    <div id="login-nav">
+        <%- include('partials/nav-common') %>
+    </div>
+    <div id="login-form">
+      <h2>Scan Results</h2>
+      <% if (vulnerabilities.length > 0) { %>
+        <table>
+          <thead>
+            <tr>
+              <th>NAME</th>
+              <th>INSTALLED</th>
+              <th>FIXED-IN</th>
+              <th>TYPE</th>
+              <th>VULNERABILITY</th>
+              <th>SEVERITY</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% vulnerabilities.forEach(vuln => { %>
+              <tr>
+                <td><%= vuln.name %></td>
+                <td><%= vuln.installed %></td>
+                <td><%= vuln.fixedIn %></td>
+                <td><%= vuln.type %></td>
+                <td><%= vuln.vulnerability %></td>
+                <td><%= vuln.severity %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      <% } else { %>
+        <p>No vulnerabilities found.</p>
+      <% } %>
+    </div>
+  </div>
+</body>
+</html>
