@@ -1,0 +1,46 @@
+#result-table {
+    grid-column: 2 / 3;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow-x: auto;
+
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: bold;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Stylizacja poziomu zagrożenia */
+table td.severity-high {
+    color: #ff4d4d;
+    font-weight: bold;
+}
+
+table td.severity-medium {
+    color: #ff9900;
+    font-weight: bold;
+}
+
+table td.severity-low {
+    color: #6c63ff;
+    font-weight: bold;
+}

@@ -44,7 +44,7 @@ const streamToString = (stream) =>
                     return {
                         name: match.artifact.name,
                         installed: match.artifact.version,
-                        fixedIn: match.vulnerability.fix?.versions.join(', ') || '(wont fix)',
+                        fixedIn: match.vulnerability.fix?.versions.join(', ') || '(won\'t fix)',
                         type: match.artifact.type,
                         vulnerability: match.vulnerability.id,
                         severity: match.vulnerability.severity

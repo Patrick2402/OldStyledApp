@@ -3,36 +3,31 @@
 <head>
   <title><%= title %></title>
   <link rel="stylesheet" href="/css/nav.css">
+  <link rel="stylesheet" href="/css/burger-nav.css">
+  <link rel="stylesheet" href="/css/post.css">
+
+
 </head>
-<body>
-  <div id="login-main">
-    <div id="login-nav">
-      <% if (isAuthed) { %>
-        <%- include('partials/nav-common') %>
-      <% } else { %> 
-        <%- include('partials/nav') %>
-      <% } %>
-    </div>
-    <div id="login-form">
-      <% if (posts.length > 0) { %>
-        <ul>
-          <% posts.forEach(post => { %>
+<div class="common-main">
+  <%- include('partials/burger-nav') %>
+
+  <div id="post-list">
+    <% if (posts.length > 0) { %>
+       <div class="post">
+        <% posts.forEach(post => { %>
             <h3><a href="/poster?post=<%= post._id %>"><%= post.title %></a></h3>
             <p><%= post.content %></p>
-              
-              <small>Dodano: <%= post.date.toDateString() %> by <%= post.username %></small>
-          </br>
-          <button  id="likeButton-<%= post._id %>" onclick="likePost('<%= post._id %>')">
-           Like it! (<%= post.likes.length %>)
-          </button>
-              <hr/>
-          <% }) %>
-        </ul>
+            <small>Dodano: <%= post.date.toDateString() %> by <%= post.username %></small>
+            <button id="likeButton-<%= post._id %>" onclick="likePost('<%= post._id %>')">
+              Like it! (<%= post.likes.length %>)
+            </button>
+        <% }) %>
+      </div>
 
-      <% } else { %>
-        <p>Nothing there.</p>
-      <% } %>
-    </div>
+    <% } else { %>
+      <p>Nothing there.</p>
+    <% } %>
+
     <div class="pagination">
       <% if (pagination.hasPreviousPage) { %>
         <a href="?page=<%= pagination.currentPage - 1 %>">Previous</a>
@@ -42,10 +37,12 @@
       <% } %>
     </div>
   </div>
-  
+</div>
 
-  <script>
-    async function likePost(postId) {
+
+
+<script>
+  async function likePost(postId) {
     try {
       const response = await fetch(`/post/${postId}/like`, {
         method: 'PUT',
@@ -60,6 +57,6 @@
       console.error('Error:', err);
     }
   }
-  </script>
+</script>
 </body>
 </html>

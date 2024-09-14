@@ -2,14 +2,16 @@
 <html>
 <head>
   <title><%= title %></title>
-  <link rel="stylesheet" href="/css/nav.css">
+  <link rel="stylesheet" href="/css/severity.css">
+  <link rel="stylesheet" href="/css/burger-nav.css">
+
 </head>
 <body>
-  <div id="login-main">
-    <div id="login-nav">
-        <%- include('partials/nav-common') %>
+  <div class="common-main">
+    <div id="result-nav">
+        <%- include('partials/burger-nav') %>
     </div>
-    <div id="login-form">
+    <div id="result-table">
       <h2>Scan Results</h2>
       <% if (vulnerabilities.length > 0) { %>
         <table>
@@ -31,7 +33,7 @@
                 <td><%= vuln.fixedIn %></td>
                 <td><%= vuln.type %></td>
                 <td><%= vuln.vulnerability %></td>
-                <td><%= vuln.severity %></td>
+                <td class="severity-<%= vuln.severity.toLowerCase() %>"><%= vuln.severity %></td>
               </tr>
             <% }) %>
           </tbody>

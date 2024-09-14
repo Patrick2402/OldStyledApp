@@ -4,12 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
-    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/burger-nav.css">
+    <link rel="stylesheet" href="/css/login-form.css">
+
 </head>
 <body>
-    <div id="login-main">
-        <div id="login-nav"><%- include('partials/nav-common') %></div>
-        <div id="login-form">
+    <div class="common-main">
+        <div class="result-nav">
+            <dev class="result-burger">
+                <a class="arrow" href="/"> Home </a>
+                <a class="arrow" href="/login"> Login </a>
+                <a class="arrow" href="/register"> Sign Up </a>
+            </dev>
+        </div>
+
+        <div class="login-form-main">
             <form class="login-form" action="/register" method="POST">
                 <label for="username">Username</label>
                 <input type="text" name="username">
@@ -17,7 +26,7 @@
                 <input type="password" name="password">
                 <label for="re_password">Confirm password</label>
                 <input type="password" name="re_password">
-                <button type="submit">Register</button>
+                <button type="submit" class="submit-btn">Register</button>
                 <% if (error) { %>
                     <div class="error-banner"><%= message %></div>
                 <% } %>
