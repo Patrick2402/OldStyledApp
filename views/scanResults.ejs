@@ -4,7 +4,6 @@
   <title><%= title %></title>
   <link rel="stylesheet" href="/css/severity.css">
   <link rel="stylesheet" href="/css/burger-nav.css">
-
 </head>
 <body>
   <div class="common-main">
@@ -12,7 +11,7 @@
         <%- include('partials/burger-nav') %>
     </div>
     <div id="result-table">
-      <h2>Scan Results</h2>
+      <h2>Scan Results: <%= imageName %></h2>
       <% if (vulnerabilities.length > 0) { %>
         <table>
           <thead>
@@ -39,7 +38,17 @@
           </tbody>
         </table>
       <% } else { %>
-        <p>No vulnerabilities found.</p>
+        <p>Select scan to see results</p>
+      <% } %>
+    </div>
+    <div class="scan-list">
+      <h1>Scans</h1>
+      <% if (myscan.length > 0) { %>
+            <% myscan.forEach(scan => { %>
+                <a href="/scan-results/<%= scan.fileName %>"><%= scan.fileName %></a>
+            <% }) %>
+      <% } else { %>
+        <p>No scans found.</p>
       <% } %>
     </div>
   </div>

@@ -10,7 +10,7 @@ body {
 
 .common-main {
     display: grid;
-    grid-template-columns: 15% auto 10%; 
+    grid-template-columns: 15% auto 15%; 
 
     margin: 0;
     padding: 10px;

@@ -12,7 +12,6 @@ router = express.Router();
 
 
 router.get('/login', (req, res, next) => {
-    console.log()
   res.render('../views/login',{title: 'Login', error: false, message: ''});
 });
 
