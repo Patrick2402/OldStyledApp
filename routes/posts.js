@@ -16,8 +16,8 @@ router.get('/posts', auth, async (req, res, next) => {
             .skip((page - 1) * limit)
             .limit(limit);
 
-        const totalPosts = await Post.countDocuments(); //number of all posts in Document Posts
-        const totalPages = Math.ceil(totalPosts / limit); // number of all pages 
+        const totalPosts = await Post.countDocuments(); 
+        const totalPages = Math.ceil(totalPosts / limit); 
 
         res.render('posts', {
             title: 'Posts',

@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body {
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+
+}
+
+.common-main {
+    display: grid;
+    grid-template-columns: 15% auto 15%; 
+
+    margin: 0;
+    padding: 10px;
+    gap: 25px;
+    background-image: url('./\ leaf.jpg');
+    background-size: cover;
+}
+
+
+.result-nav {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    height: 98vh;
+    border-radius: 8px;
+}
+
+.result-burger {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.result-burger a {
+    text-decoration: none;
+    font-size: 24px;
+    color: white;
+    border-bottom: 2px solid white;
+    display: flex;
+    align-items: center;
+    padding: 12px 18px;
+    /* background-color: #ffffff; */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+}
+
+.result-burger a:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    color: #007bff; 
+}
+.result-burger a:active {
+    background-color: #e0e0e0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}

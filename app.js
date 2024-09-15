@@ -13,6 +13,8 @@ const profile = require('./routes/profile');
 const resetPassword = require('./routes/changePassword');
 const pass = require('./mongopasswords');
 const securityHeaders = require('./middleware/securityHeaders');
+const startScan = require('./routes/startScan');
+const scanResults = require('./routes/scanResults');
 
 
 // const ejs = require('ejs')
@@ -34,6 +36,8 @@ app.use(express.urlencoded({ extended: true }));
 //     res.render('posts', {title: 'Posts', message: 'Here there are some products', posts: addPost.posts });
 // })
 app.use(securityHeaders);
+app.use(scanResults.router);
+app.use(startScan.router);
 app.use(resetPassword.router);
 app.use(profile.router);
 app.use(posts.router);

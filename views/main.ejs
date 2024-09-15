@@ -3,24 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %>></title>
-    <link rel="stylesheet" href="/css/nav.css">
-</head>
-<body>
-    <ol>
-        <li><a class="arrow" href="/"><i class="fas fa-arrow-alt-right"></i>Home</a></li>
-        
-        <% if (isAuthed) { %>
-            <li><a class="arrow" href="/posts"><i class="fas fa-arrow-alt-right"></i>Posts</a></li>
-            <li><a class="arrow" href="/addPost"><i class="fas fa-arrow-alt-right"></i>Add Posts</a></li>
-            <li><a class="arrow" href="/profile"><i class="fas fa-arrow-alt-right"></i>My Profile</a></li>
-            <li><a class="arrow" href="/logout"><i class="fas fa-arrow-alt-right"></i>Logout</a></li>
-        <% } else { %>
-            <li><a class="arrow" href="/login"><i class="fas fa-arrow-alt-right"></i>Login</a></li>
-            <li><a class="arrow" href="/register"><i class="fas fa-arrow-alt-right"></i>Sign Up</a></li>
-        <% } %>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/burger-nav.css">
+    <link rel="stylesheet" href="/css/main.css">
 
-        
-      </ol>
+
+</head>
+<body>        
+        <div class="parent">
+            <div class="nav">
+                <% if (isAuthed) { %>
+                    <%- include('partials/burger-nav') %>
+                <% } else { %>
+            
+                    <div class="result-nav">
+                        <dev class="result-burger">
+                            <a class="arrow" href="/"> Home </a>
+                            <a class="arrow" href="/login"> Login </a>
+                            <a class="arrow" href="/register"> Sign Up </a>
+                        </dev>
+                    </div>
+                <% } %>
+            </div>
+            <div class="right-top">
+                <div></div>
+            </div>
+            <div class="left-box">
+                <h1>Welcome to ScanCo</h1>
+                <p>Welcome to <strong>ScanCo</strong>, where cutting-edge technology meets comprehensive security. Designed to keep your assets safe and secure, ScanCo provides a powerful tool for scanning and managing vulnerabilities with ease.</p>
+                
+                <h2>Key Features:</h2>
+                <ul>
+                    <li><strong>Advanced Vulnerability Scanning:</strong> Quickly identify potential security weaknesses with our state-of-the-art scanning tool. Our technology ensures thorough and accurate assessments to protect your systems from threats.</li>
+                    <li><strong>Clear, Organized Results:</strong> View your scan results in a meticulously organized table, designed for clarity and ease of interpretation. Navigate through your data effortlessly and focus on what matters most.</li>
+                    <li><strong>Seamless Data Management:</strong> All your scans are automatically saved and easily accessible within the app. Manage, review, and analyze your vulnerability data with unmatched convenience.</li>
+                </ul> 
+            </div>
+         
+            <div class="right-box"> </div>
+            <div class="footer"> 
+                  <ul class="menu">
+  
+
+                    <% if (isAuthed) { %>
+                        <li class="menu__item"><a class="menu__link" href="/">Home</a></li>
+                        <li class="menu__item"><a class="menu__link" href="/posts">Posts</a></li>
+                        <li class="menu__item"><a class="menu__link" href="/Addpost"">Add Post</a></li>
+                        <li class="menu__item"><a class="menu__link" href="/profile"">My Profile</a></li>
+                        <li class="menu__item"><a class="menu__link" href="/logout"">Logout</a></li>
+                    <% } else { %>
+                                <li class="menu__item"><a class="menu__link" href="/">Home</a></li>
+                                <li class="menu__item"><a class="menu__link" href="/login">Login</a></li>
+                                <li class="menu__item"><a class="menu__link" href="/register"">Sign up</a></li>
+                    <% } %>
+                  </ul>
+                  <p>&copy;2024 Patryk Zawieja | All Rights Reserved</p>
+            </div>
+        </div>
+
 </body>
 </html>

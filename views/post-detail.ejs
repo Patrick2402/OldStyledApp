@@ -4,26 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %> </title>
-    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/burger-nav.css">
+    <link rel="stylesheet" href="/css/post-detail.css">
 
 </head>
 <body>
-    <div id="post-main">
-        <div id="post-nav">
-            <%- include('partials/nav') %>
-        </div>
-        <div id="post-content">
-            <button  id="likeButton-<%= post._id %>" onclick="likePost('<%= post._id %>')">
-                 Like it! (<%= post.likes.length %>)
-            </button>
-            <h1><%= title %></h1>
-            <small><i>Created by <%= post.username %></i></small>
-            </br>
-            <p><%= post.content %></p>
-            
-
+  <div class="common-main">
+    <%- include('partials/burger-nav') %>
+    <div id="post-content">
+        <button id="likeButton-<%= post._id %>" class="like-button" onclick="likePost('<%= post._id %>')">
+          Like it! (<%= post.likes.length %>)
+        </button>
+        <div class="post-details">
+            <h1 class="post-title"><%= title %></h1>
+            <small class="post-meta"><i>Created by <%= post.username %></i></small>
+            <p class="post-content"><%= post.content %></p>
         </div>
     </div>
+  </div>
 
       <script>
         async function likePost(postId) {

@@ -1,0 +1,72 @@
+#result-table {
+    grid-column: 2 / 3;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow-x: auto;
+
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: bold;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Stylizacja poziomu zagrożenia */
+table td.severity-high {
+    color: #ff4d4d;
+    font-weight: bold;
+}
+
+table td.severity-medium {
+    color: #ff9900;
+    font-weight: bold;
+}
+
+table td.severity-low {
+    color: #6c63ff;
+    font-weight: bold;
+}
+
+.scan-list {
+    color: white;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+
+}
+.scan-list a {
+    color: white;
+    font-size: 17px;
+    text-decoration: unset;
+    border-bottom: 1px solid white;
+    padding: 5px;
+
+}
+
+.scan-list a:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    color: #007bff; 
+}
+.scan-list a:active {
+    background-color: #e0e0e0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}

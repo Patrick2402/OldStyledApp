@@ -25,7 +25,7 @@ router.post('/register', async (req, res, next) => {
     
 
     try {
-        const existingUser = await User.findOne({ username: username }); //checking if user exists
+        const existingUser = await User.findOne({ username: username }); 
         if (existingUser) {
             return res.render('register', { title: 'Register', error: true, message: "Username is taken!" });
         }
