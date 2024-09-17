@@ -29,7 +29,7 @@ router.post("/start-scan", isAuthenticated, async (req, res) => {
   const minutes = String(now.getMinutes()).padStart(2, "0");
   const seconds = String(now.getSeconds()).padStart(2, "0");
   const formattedDate = `${year}-${month}-${day}-${hours}-${minutes}-${seconds}`;
-  const outputFileName = `scan-${formattedDate}`;
+  const outputFileName = `scan-${formattedDate}.json`;
 
   const filePath = path.join(__dirname, "../scans", outputFileName);
 
