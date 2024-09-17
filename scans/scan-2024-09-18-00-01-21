@@ -1,0 +1,61 @@
+NAME          INSTALLED      FIXED-IN                  TYPE       VULNERABILITY        SEVERITY 
+certifi       2024.2.2       2024.07.04                python     GHSA-248v-346w-9cwc  Low       
+cryptography  42.0.7         43.0.1                    python     GHSA-h4gh-qq45-vh27  Medium    
+gnutls        3.8.3-4.el9_4  10:3.8.3-4.el9_4_fips     rpm        ELSA-2024-12364      Medium    
+gnutls        3.8.3-4.el9_4  10:3.7.6-23.el9_3.4_fips  rpm        ELSA-2024-12336      Medium    
+stdlib        go1.18.2                                 go-module  CVE-2024-24790       Critical  
+stdlib        go1.18.2                                 go-module  CVE-2023-29405       Critical  
+stdlib        go1.18.2                                 go-module  CVE-2023-29404       Critical  
+stdlib        go1.18.2                                 go-module  CVE-2023-29402       Critical  
+stdlib        go1.18.2                                 go-module  CVE-2023-24540       Critical  
+stdlib        go1.18.2                                 go-module  CVE-2023-24538       Critical  
+stdlib        go1.18.2                                 go-module  CVE-2023-24531       Critical  
+stdlib        go1.18.2                                 go-module  CVE-2024-34158       High      
+stdlib        go1.18.2                                 go-module  CVE-2024-34156       High      
+stdlib        go1.18.2                                 go-module  CVE-2024-24791       High      
+stdlib        go1.18.2                                 go-module  CVE-2024-24784       High      
+stdlib        go1.18.2                                 go-module  CVE-2023-45288       High      
+stdlib        go1.18.2                                 go-module  CVE-2023-45287       High      
+stdlib        go1.18.2                                 go-module  CVE-2023-45285       High      
+stdlib        go1.18.2                                 go-module  CVE-2023-44487       High      
+stdlib        go1.18.2                                 go-module  CVE-2023-39323       High      
+stdlib        go1.18.2                                 go-module  CVE-2023-29403       High      
+stdlib        go1.18.2                                 go-module  CVE-2023-29400       High      
+stdlib        go1.18.2                                 go-module  CVE-2023-24539       High      
+stdlib        go1.18.2                                 go-module  CVE-2023-24537       High      
+stdlib        go1.18.2                                 go-module  CVE-2023-24536       High      
+stdlib        go1.18.2                                 go-module  CVE-2023-24534       High      
+stdlib        go1.18.2                                 go-module  CVE-2022-41725       High      
+stdlib        go1.18.2                                 go-module  CVE-2022-41724       High      
+stdlib        go1.18.2                                 go-module  CVE-2022-41723       High      
+stdlib        go1.18.2                                 go-module  CVE-2022-41722       High      
+stdlib        go1.18.2                                 go-module  CVE-2022-41715       High      
+stdlib        go1.18.2                                 go-module  CVE-2022-32189       High      
+stdlib        go1.18.2                                 go-module  CVE-2022-30635       High      
+stdlib        go1.18.2                                 go-module  CVE-2022-30633       High      
+stdlib        go1.18.2                                 go-module  CVE-2022-30632       High      
+stdlib        go1.18.2                                 go-module  CVE-2022-30631       High      
+stdlib        go1.18.2                                 go-module  CVE-2022-30630       High      
+stdlib        go1.18.2                                 go-module  CVE-2022-30580       High      
+stdlib        go1.18.2                                 go-module  CVE-2022-2880        High      
+stdlib        go1.18.2                                 go-module  CVE-2022-2879        High      
+stdlib        go1.18.2                                 go-module  CVE-2022-28131       High      
+stdlib        go1.18.2                                 go-module  CVE-2022-27664       High      
+stdlib        go1.18.2                                 go-module  CVE-2024-24789       Medium    
+stdlib        go1.18.2                                 go-module  CVE-2024-24787       Medium    
+stdlib        go1.18.2                                 go-module  CVE-2023-39326       Medium    
+stdlib        go1.18.2                                 go-module  CVE-2023-39319       Medium    
+stdlib        go1.18.2                                 go-module  CVE-2023-39318       Medium    
+stdlib        go1.18.2                                 go-module  CVE-2023-29409       Medium    
+stdlib        go1.18.2                                 go-module  CVE-2023-29406       Medium    
+stdlib        go1.18.2                                 go-module  CVE-2023-24532       Medium    
+stdlib        go1.18.2                                 go-module  CVE-2022-41717       Medium    
+stdlib        go1.18.2                                 go-module  CVE-2022-32148       Medium    
+stdlib        go1.18.2                                 go-module  CVE-2022-1962        Medium    
+stdlib        go1.18.2                                 go-module  CVE-2022-1705        Medium    
+stdlib        go1.18.2                                 go-module  CVE-2022-30629       Low       
+stdlib        go1.18.2                                 go-module  CVE-2024-34155       Unknown   
+stdlib        go1.18.2                                 go-module  CVE-2024-24785       Unknown   
+stdlib        go1.18.2                                 go-module  CVE-2024-24783       Unknown   
+stdlib        go1.18.2                                 go-module  CVE-2023-45290       Unknown   
+stdlib        go1.18.2                                 go-module  CVE-2023-45289       Unknown

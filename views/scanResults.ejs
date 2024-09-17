@@ -4,7 +4,7 @@
   <title><%= title %></title>
   <link rel="stylesheet" href="/css/severity.css">
   <link rel="stylesheet" href="/css/burger-nav.css">
-</head>
+  <script src="/js/edit.js" defer></script> 
 <body>
   <div class="common-main">
     <div id="result-nav">
@@ -26,13 +26,15 @@
           </thead>
           <tbody>
             <% vulnerabilities.forEach(vuln => { %>
-              <tr>
+              <tr data-id="<%= vuln.id %>">
                 <td><%= vuln.name %></td>
                 <td><%= vuln.installed %></td>
                 <td><%= vuln.fixedIn %></td>
                 <td><%= vuln.type %></td>
                 <td><%= vuln.vulnerability %></td>
-                <td class="severity-<%= vuln.severity.toLowerCase() %>"><%= vuln.severity %></td>
+                <td class="severity-cell" data-id="<%= vuln.vulnerability %>">
+                  <span class="severity-text"><%= vuln.severity %></span>
+                </td>
               </tr>
             <% }) %>
           </tbody>

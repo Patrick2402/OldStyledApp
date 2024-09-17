@@ -15,6 +15,7 @@ const pass = require("./mongopasswords");
 const securityHeaders = require("./middleware/securityHeaders");
 const startScan = require("./routes/startScan");
 const scanResults = require("./routes/scanResults");
+const updateSeverity = require('./routes/updateSeverity');
 
 // const ejs = require('ejs')
 const app = express();
@@ -35,6 +36,7 @@ app.use(express.urlencoded({ extended: true }));
 // app.use('/posts', (req, res, next) => {
 //     res.render('posts', {title: 'Posts', message: 'Here there are some products', posts: addPost.posts });
 // })
+app.use(updateSeverity.router);
 app.use(securityHeaders);
 app.use(scanResults.router);
 app.use(startScan.router);

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tytul</title>
+  <link rel="stylesheet" href="/css/severity.css">
+  <link rel="stylesheet" href="/css/burger-nav.css">
+<body>
+  <div class="common-main">
+    <div id="result-nav">
+        <%- include('partials/burger-nav') %>
+    </div>
+    <div id="result-table">
+      <h2>Scan Results: <%= imageName %></h2>
+      <% if (data.length > 0) { %>
+        <table>
+          <thead>
+            <tr>
+              <th>PACKAGE</th>
+              <th>INSTALLED</th>
+              <th>FIXED-IN</th>
+              <th>TYPE</th>
+              <th>VULNERABILITY</th>
+              <th>SEVERITY</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% data.forEach(d => { %>
+              <tr>
+                <td><%= d.package %></td>
+                <td><%= d.installed %></td>
+                <td><%= d.fixed_in %></td>                
+                <td><%= d.type %></td>
+                <td><%= d.cve %></td>
+                <td><%= d.severity %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      <% } else { %>
+        <p>Select scan to see results</p>
+      <% } %>
+    </div>
+    <div class="scan-list">
+        <h1>Scans</h1>
+        <% if (myscan.length > 0) { %>
+              <% myscan.forEach(scan => { %>
+                  <a href="/scan-results/<%= scan.fileName %>"><%= scan.fileName %></a>
+              <% }) %>
+        <% } else { %>
+          <p>No scans found.</p>
+        <% } %>
+      </div>
+  </div>
+</body>
+</html>
